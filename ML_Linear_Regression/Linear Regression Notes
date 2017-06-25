@@ -1,0 +1,46 @@
+from sklearn.family import Model(IN THIS CASE:)
+from sklearn.linear_model import LinearRegression
+
+
+# Linear Regression
+
+easy in that it assumes there is a linear relationship with Y + b + b1*X
+The best way to fit the required line to the data - is to find the line that has the least RSS (the residual distances between your prediction with ACTUAL points). Commonly known as the Least Squares Approach.
+
+Confidence Intervals
+- A 95% Confidence interval is a range of values such that 95% probability the range will continue true for UNKNOWN values of the parameter .
+
+Null Hypothesis
+As this is good for testing relationships between X and Y
+H0 - There is no relationship between X and Y
+>>> Alternative hypothesis: There is some relationship between X and Y
+So to do this, we need to use the a t-stat because we need to know  HOW far it will differentiate between both.
+=> t B1 -0 / SE(b1)
+- Measures the amount of standard deviations that b1 is away from 0
+The t statistic is a measure of how extreme a statistical estimate is. You compute this statistic by subtracting the hypothesized value from the statistical estimate and then dividing by the estimated standard error. In many, but not all situation, the hypothesized value would be zero.
+
+
+>>> P Value is the probability of observation any value assuming B1 = 0
+- Meaning a SMALL p-value, means a good relationship
+- typical cut offs of p-value are 5 or 1%
+
+*** SELF NOTE: B1 is the coefficient next to X. Given the formulation of Y = B1*x + B, if B1 = 0, then there would be literally no relationship between Y to X. Consequently, this is a null hypothesis. Also, given that B1 = 0, the p-value will be based on B1 = 0, meaning if this his high, there is no relationship given to Y and X. The T-state with all this in regards, is how far B1 AWAY from 0. So a really high t-stat means (relative to SD) - is not good. 
+
+ASSESSING ACCURACY
+Residual Standard Error (RSE)
+Remember you can’t perfect predict things
+RSE = sqrt(RSS*1/(n-2))
+RSE is the LACK of fit of a model. 
+
+R-squared
+Measure of lack of fit of model. 
+- R-squared is a proportion
+R^2 - 1-(RSS/TSS)
+
+Regression with Classifiers
+Essentially if you have only two levels - you could make xi = 1 for female, xi = 0 for male
+- you effectively create dummy variables with value
+
+Problems
+1. With regards to some items having a possible INTERACTION (in marketing this is known as SYNERGISM) - you can make some of the factors combined together. For example, X1 and X2 - in the formulation Y = aX1 + bX2 + cX1X2. Remembering that this is still a LINEAR model, but the variables so happy to represent the variables multiplied.
+2. This is is the same with doubling up, doing X1X1 itself, as is simply REPRESENTS the square of the number
